@@ -1,6 +1,3 @@
-
-raw
-Readme · MD
 # PuffLab
  
 A dark, minimal e-commerce storefront for a fictional techwear brand selling collectible puffer-jacket "skins". Built as a hands-on project to learn modern React from the ground up.
