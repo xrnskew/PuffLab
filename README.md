@@ -2,12 +2,7 @@
  
 A dark, minimal e-commerce storefront for a fictional techwear brand selling collectible puffer-jacket "skins". Built as a hands-on project to learn modern React from the ground up.
  
-<!-- TODO: добавь живую ссылку после деплоя на Vercel -->
-**Live demo:** [pufflab.vercel.app](https://pufflab.vercel.app)
- 
-<!-- TODO (по желанию): добавь скриншот. Положи картинку в репозиторий и впиши путь:
-![PuffLab screenshot](./screenshot.png)
--->
+**Live demo:** [pufflab.vercel.app](https://pufflab-eight.vercel.app/)
  
 ## Features
  
