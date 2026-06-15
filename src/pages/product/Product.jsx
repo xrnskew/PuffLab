@@ -30,7 +30,7 @@ function Product({products, addToCart, removeFromCart, cart}) {
             <button onClick={() => navigate(-1)} className="mt-4 text-lg text-zinc-600 transition hover:text-zinc-400">← Back</button>
 
             <div className="flex flex-col md:flex-row gap-16 py-12">
-                <img src={product.image} alt={product.name} className="w-full max-w-md rounded-xl border border-zinc-800"/>
+                <img src={product.image} alt={product.name} loading="lazy" className="w-full max-w-md rounded-xl border border-zinc-800"/>
                 <div className="flex flex-col gap-4 max-w-xl">
                     <h2 className="text-5xl text-zinc-100 tracking-widest uppercase">{product.name}</h2>
                     <p className="text-lg text-zinc-300">{product.description}</p>

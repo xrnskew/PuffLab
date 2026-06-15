@@ -5,20 +5,20 @@ import Home from './pages/home/Home'
 import Cart from './pages/cart/Cart'
 import Product from './pages/product/Product';
 
-import S1BlackFiber from './assets/skins/S1-BlackFiber.png';
-import S2PinkFur from './assets/skins/S2-PinkFur.png';
-import S3Iridescent from './assets/skins/S3-Iridescent.png';
-import S4GlossyRed from './assets/skins/S4-GlossyRed.png';
-import S5CamoTexture from './assets/skins/S5-CamoTexture.png';
-import S6ChromeTexture from './assets/skins/S6-ChromeTexture.png';
-import S7DenimTexture from './assets/skins/S7-DenimTexture.png';
-import S8VelvetRoyal from './assets/skins/S8-VelvetRoyal.png';
-import S9CarbonFiber from './assets/skins/S9-CarbonFiber.png';
-import S10GoldMetallic from './assets/skins/S10-GoldMetallic.png';
-import S11NeonGreen from './assets/skins/S11-NeonGreen.png';
-import S12CarpetTexture from './assets/skins/S12-CarpetTexture.png';
-import S13IceTexture from './assets/skins/S13-IceTexture.png';
-import S14LeopardTexture from './assets/skins/S14-LeopardTexture.png';
+import S1BlackFiber from './assets/skins/S1-BlackFiber.webp';
+import S2PinkFur from './assets/skins/S2-PinkFur.webp';
+import S3Iridescent from './assets/skins/S3-Iridescent.webp';
+import S4GlossyRed from './assets/skins/S4-GlossyRed.webp';
+import S5CamoTexture from './assets/skins/S5-CamoTexture.webp';
+import S6ChromeTexture from './assets/skins/S6-ChromeTexture.webp';
+import S7DenimTexture from './assets/skins/S7-DenimTexture.webp';
+import S8VelvetRoyal from './assets/skins/S8-VelvetRoyal.webp';
+import S9CarbonFiber from './assets/skins/S9-CarbonFiber.webp';
+import S10GoldMetallic from './assets/skins/S10-GoldMetallic.webp';
+import S11NeonGreen from './assets/skins/S11-NeonGreen.webp';
+import S12CarpetTexture from './assets/skins/S12-CarpetTexture.webp';
+import S13IceTexture from './assets/skins/S13-IceTexture.webp';
+import S14LeopardTexture from './assets/skins/S14-LeopardTexture.webp';
 
 function App() {
 

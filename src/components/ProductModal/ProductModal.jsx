@@ -16,6 +16,7 @@ function ProductModal({ product, onClose, addToCart, removeFromCart, cart }) {
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
           className="w-full md:w-72 aspect-square object-cover rounded-lg border border-zinc-800"
         />
         <div className="flex flex-col gap-4 max-w-sm">
