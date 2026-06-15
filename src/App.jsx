@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, NavLink} from 'react-router-dom';
 
 import Home from './pages/home/Home'
@@ -22,7 +22,14 @@ import S14LeopardTexture from './assets/skins/S14-LeopardTexture.webp';
 
 function App() {
 
-const [cart, setCart] = useState([])
+const [cart, setCart] = useState(() => {
+  const saved = localStorage.getItem('cart')
+  return saved ? JSON.parse(saved) : []
+})
+
+useEffect(() => {
+  localStorage.setItem('cart', JSON.stringify(cart))
+}, [cart])
 
 const products = [
   { id: 10, name: 'Gold',        price: 349, image: S10GoldMetallic, description: 'A mirror-polished metallic shell that catches the light from every angle. Heavyweight quilted construction for a jewelry-grade statement piece.', specs: { material: 'Nylon', finish: 'Metallic gloss', weight: '720g' } },
@@ -40,6 +47,8 @@ const products = [
   { id: 5,  name: 'Camo',        price: 99,  image: S5CamoTexture, description: 'Multi-tone camouflage shell in a matte finish. Built for low-key, all-weather style.', specs: { material: 'Cotton blend', finish: 'Matte', weight: '670g' } },
   { id: 1,  name: 'Black',       price: 89,  image: S1BlackFiber, description: 'Woven black fibre shell with a matte clear coat. Minimal, durable, and goes with everything.', specs: { material: 'Woven fibre', finish: 'Matte coat', weight: '640g' } },
 ];
+
+
 
 function addToCart(productId) {
   const existing = cart.find(item => item.id === productId)
@@ -71,7 +80,7 @@ const navCls = ({ isActive }) =>
   `font-mono text-xs tracking-widest uppercase py-2.5 px-4.5 rounded-full border-2 transition-colors duration-150 ${
     isActive
       ? 'text-zinc-100 border-zinc-700 bg-zinc-800/60'
-      : 'text-zinc-500 border-transparent hober:border-2 hover:text-zinc-300 hover:border-zinc-700'
+      : 'text-zinc-500 border-transparent hover:border-2 hover:text-zinc-300 hover:border-zinc-700'
   }`;
 
 return (
