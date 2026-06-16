@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import ProductCard from '../../components/productCard/ProductCard';
-import ProductModal from '../../components/productModal/ProductModal';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import ProductModal from '../../components/ProductModal/ProductModal';
 
 function Home({products, addToCart, removeFromCart, cart}) {
 

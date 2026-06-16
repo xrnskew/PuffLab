@@ -11,3 +11,4 @@ function ProductCard({ id, name, price, image, onOpen}) {
 }
 
 export default ProductCard
+//

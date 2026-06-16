@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useMemo } from "react";
 
-import ProductCard from "../../components/productCard/ProductCard";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 function Product({products, addToCart, removeFromCart, cart}) {
 

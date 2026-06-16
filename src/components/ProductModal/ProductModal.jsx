@@ -50,3 +50,4 @@ function ProductModal({ product, onClose, addToCart, removeFromCart, cart }) {
 }
 
 export default ProductModal
+//
