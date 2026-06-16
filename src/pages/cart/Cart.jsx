@@ -1,4 +1,4 @@
-import ProductCard from '../../components/ProductCard/ProductCard';
+import CartItem from '../../components/cartitem/CartItem';
 
 function Cart({products, addToCart, removeFromCart, cart}) {
 
@@ -19,15 +19,13 @@ function Cart({products, addToCart, removeFromCart, cart}) {
         <span className="text-xs tracking-widest uppercase text-zinc-500">Total</span>
         <span className="text-lg text-zinc-100">${total}</span>
       </div>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5">
+      <div className="flex flex-col gap-4">
         {cart.map((item) => {
           const product = products.find(p => p.id === item.id)
           return (
-            <ProductCard
+            <CartItem
               key={product.id}
-              name={product.name}
-              price={product.price}
-              image={product.image}
+              product={product}
               quantity={item.quantity}
               onAdd={() => addToCart(product.id)}
               onRemove={() => removeFromCart(product.id)}
