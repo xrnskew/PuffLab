@@ -19,6 +19,7 @@ import S11NeonGreen from './assets/skins/S11-NeonGreen.webp';
 import S12CarpetTexture from './assets/skins/S12-CarpetTexture.webp';
 import S13IceTexture from './assets/skins/S13-IceTexture.webp';
 import S14LeopardTexture from './assets/skins/S14-LeopardTexture.webp';
+import Checkout from './pages/checkout/Chekout';
 
 function App() {
 
@@ -76,20 +77,24 @@ function removeFromCart(productId) {
   }
 }
 
+  function clearCart() {
+        setCart([]);
+  }
+
 const navCls = ({ isActive }) =>
-  `font-mono text-xs tracking-widest uppercase py-2.5 px-4.5 rounded-full border-2 transition-colors duration-150 ${
+  `font-mono text-xs tracking-widest uppercase py-2 sm:py-2.5 px-3 sm:px-4.5 rounded-full border transition-colors duration-150 ${
     isActive
       ? 'text-zinc-100 border-zinc-700 bg-zinc-800/60'
-      : 'text-zinc-500 border-transparent hover:border-2 hover:text-zinc-300 hover:border-zinc-700'
+      : 'text-zinc-500 border-transparent hover:text-zinc-300 hover:border-zinc-700'
   }`;
 
 return (
   <>
-    <header className="flex items-center justify-between px-10 pt-7">
-      <h1 className="m-0 text-2xl font-semibold tracking-widest uppercase">
+    <header className="flex items-center justify-between gap-4 px-5 sm:px-10 pt-7">
+      <h1 className="m-0 text-lg sm:text-2xl font-semibold tracking-widest uppercase shrink-0">
         <span className="font-mono font-normal text-zinc-100">// </span>PuffLab
       </h1>
-      <nav className="flex gap-1">
+      <nav className="flex gap-1 shrink-0">
         <NavLink to="/" end className={navCls}>Home</NavLink>
         <NavLink to="/cart" className={navCls}>Cart ({cart.length})</NavLink>
       </nav>
@@ -119,6 +124,13 @@ return (
             addToCart={addToCart}
             removeFromCart={removeFromCart}
             cart={cart}
+          />}
+        />
+        <Route path="/checkout" element={
+          <Checkout
+            products={products} 
+            cart={cart}
+            onOrderSubmit={clearCart}
           />}
         />
       </Routes>

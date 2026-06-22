@@ -31,7 +31,7 @@ Clone the repo and install dependencies:
 
 ```bash
 git clone https://github.com/xrnskew/pufflab.git
-cd pufflab
+cd front-end
 npm install
 ```
 

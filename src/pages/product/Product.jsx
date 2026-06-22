@@ -29,7 +29,7 @@ function Product({products, addToCart, removeFromCart, cart}) {
             </div>
             <button onClick={() => navigate(-1)} className="mt-4 text-lg text-zinc-600 transition hover:text-zinc-400">← Back</button>
 
-            <div className="flex flex-col md:flex-row gap-16 py-12">
+            <div className="flex flex-col md:flex-row md:items-start gap-16 py-12">
                 <img src={product.image} alt={product.name} loading="lazy" className="w-full max-w-md rounded-xl border border-zinc-800"/>
                 <div className="flex flex-col gap-4 max-w-xl">
                     <h2 className="text-5xl text-zinc-100 tracking-widest uppercase">{product.name}</h2>
@@ -53,15 +53,24 @@ function Product({products, addToCart, removeFromCart, cart}) {
                             <dd className="mt-1 font-mono text-zinc-200">{sku}</dd>
                         </div>
                     </dl>
-                    <div className="mt-8 md:mt-14">
+                    <div className="mt-6 md:mt-12">
                         {inCart ? (
-                            <div className="flex gap-4 items-center">
-                                <button onClick={() => removeFromCart(product.id)} className="text-lg px-4 py-2 border-2 border-zinc-400 rounded-xl transition hover:border-zinc-200">-</button>
-                                <span className="text-xl font-mono">{inCart.quantity}</span>
-                                <button onClick={() => addToCart(product.id)} className="text-lg px-4 py-2 border-2 border-zinc-400 rounded-xl transition hover:border-zinc-200">+</button>
+                            <div className="flex items-center w-fit border border-zinc-700 rounded-lg overflow-hidden">
+                                <button
+                                    onClick={() => removeFromCart(product.id)}
+                                    className={`w-12 h-12 flex items-center justify-center text-xl transition-colors ${
+                                        inCart.quantity === 1
+                                            ? 'text-red-500/60 hover:text-red-400 hover:bg-red-950/40'
+                                            : 'text-zinc-500 hover:text-zinc-100 hover:bg-zinc-800'
+                                    }`}
+                                >
+                                    {inCart.quantity === 1 ? '×' : '−'}
+                                </button>
+                                <span className="w-12 text-center font-mono text-lg text-zinc-100 border-x border-zinc-700">{inCart.quantity}</span>
+                                <button onClick={() => addToCart(product.id)} className="w-12 h-12 flex items-center justify-center text-xl text-zinc-500 hover:text-zinc-100 hover:bg-zinc-800 transition-colors">+</button>
                             </div>
                         ) : (
-                            <button onClick={() => addToCart(product.id)} className="text-lg px-16 py-2 border-2 border-zinc-400 rounded-xl transition hover:border-zinc-200">Add</button>
+                            <button onClick={() => addToCart(product.id)} className="h-12 px-16 flex items-center justify-center text-lg text-zinc-100 border border-zinc-700 rounded-lg transition-colors hover:bg-zinc-800">Add</button>
                         )}
                     </div>
                 </div>
