@@ -19,7 +19,7 @@ import S11NeonGreen from './assets/skins/S11-NeonGreen.webp';
 import S12CarpetTexture from './assets/skins/S12-CarpetTexture.webp';
 import S13IceTexture from './assets/skins/S13-IceTexture.webp';
 import S14LeopardTexture from './assets/skins/S14-LeopardTexture.webp';
-import Checkout from './pages/checkout/Chekout';
+import Checkout from './pages/checkout/Cheсkout';
 
 function App() {
 

@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import ProductCard from '../../components/productCard/ProductCard';
 import ProductModal from '../../components/productModal/ProductModal';
 import MainBanner from '../../assets/banners/B1-Main.png';
@@ -7,6 +7,8 @@ function Home({products, addToCart, removeFromCart, cart}) {
 
   const [view, setView] = useState("default")
   const [openProduct, setOpenProduct] = useState(null)
+
+  const gridRef = useRef(null) 
 
   const shuffled = useMemo(() => {
     return [...products].sort(() => Math.random() - 0.5)
@@ -44,10 +46,8 @@ function Home({products, addToCart, removeFromCart, cart}) {
             Premium puffer jackets with unique textures 
           </p>
           <div className="flex gap-4">
-            <button 
-              onClick={() => {
-                const grid = document.querySelector('.grid')
-                grid?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            <button onClick={() => {
+              gridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
               className="inline-block py-3.5 px-8 rounded-full bg-zinc-100 text-zinc-900 text-sm font-medium tracking-widest uppercase transition hover:bg-zinc-300"
             >
@@ -74,7 +74,7 @@ function Home({products, addToCart, removeFromCart, cart}) {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5">
+      <div ref={gridRef} className="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-5">
         {sorted.map((product) => {
           return (
             <ProductCard
